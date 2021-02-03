@@ -9,7 +9,7 @@
     <Description>Not Available</Description>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Penguin.Web.JsonClient" Version="5.0.1-TA99DVY" />
+    <PackageReference Include="Penguin.Web.JsonClient" Version="5.0.2-TA9U7IK" />
   </ItemGroup>
   <Import Project="Penguin.Projects.Shared\Penguin.Projects.Shared.csproj" />
 </Project>
