@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageProjectUrl>https://github.com/penguincms/Penguin.Authentication.Okta</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/PenguinCMS/Penguin.Authentication.Okta</PackageProjectUrl>
     <DocumentationFile>Penguin.Authentication.Okta.xml</DocumentationFile>
     <Version>5.0.5</Version>
     <AssemblyName>Penguin.Authentication.Okta</AssemblyName>
@@ -9,7 +9,7 @@
     <Description>Not Available</Description>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Penguin.Web.JsonClient" Version="5.0.6-TAEO1KM" />
+    <PackageReference Include="Penguin.Web.JsonClient" Version="5.0.6-TAHULSY" />
   </ItemGroup>
   <Import Project="Penguin.Projects.Shared\Penguin.Projects.Shared.csproj" />
 </Project>
