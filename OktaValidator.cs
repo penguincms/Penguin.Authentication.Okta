@@ -1,9 +1,4 @@
 ﻿using Penguin.Web;
-using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Text;
-using System.Security;
 
 namespace Penguin.Authentication.Okta
 {
@@ -13,12 +8,12 @@ namespace Penguin.Authentication.Okta
 
         public OktaValidator(string oktaSubDomain)
         {
-            this.SubDomain = oktaSubDomain;
+            SubDomain = oktaSubDomain;
         }
 
         public bool Validate(string username, string password)
         {
-            return Validate(this.SubDomain, username, password);
+            return Validate(SubDomain, username, password);
         }
 
         public static bool Validate(string oktaSubDomain, string username, string password)
@@ -29,7 +24,7 @@ namespace Penguin.Authentication.Okta
                 throw new SecurityException($"{nameof(ServicePointManager)}.{nameof(ServicePointManager.SecurityProtocol)} must have flag {nameof(SecurityProtocolType)}.{nameof(SecurityProtocolType.Tls12)} ({(int)SecurityProtocolType.Tls12}) set in order to connect to OKTA service");
             }
 #endif
-            OktaRequest request = new OktaRequest()
+            OktaRequest request = new()
             {
                 Options = new LoginOptions()
                 {
@@ -40,12 +35,11 @@ namespace Penguin.Authentication.Okta
                 Password = password
             };
 
-            JsonClient jc = new JsonClient();
+            JsonClient jc = new();
 
             OktaResponse response = jc.UploadJson<OktaResponse>($"https://{oktaSubDomain}.okta.com/api/v1/authn", request);
 
             return response.Status == "SUCCESS";
         }
-     
     }
 }
