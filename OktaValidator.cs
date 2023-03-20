@@ -35,7 +35,7 @@ namespace Penguin.Authentication.Okta
                 Password = password
             };
 
-            JsonClient jc = new();
+            using JsonClient jc = new();
 
             OktaResponse response = jc.UploadJson<OktaResponse>($"https://{oktaSubDomain}.okta.com/api/v1/authn", request);
 
